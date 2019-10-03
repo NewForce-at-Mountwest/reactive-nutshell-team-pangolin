@@ -5,9 +5,7 @@ import ChatManager from '../modules/ChatManager'
 class ChatList extends Component {
     state = {
         messages: [],
-        users: [],
         newMessage: "",
-        loadingStatus: false
     }
 
     handleFieldChange = evt => {
@@ -27,8 +25,7 @@ class ChatList extends Component {
         evt.preventDefault();
         if (this.state.newMessage === "") {
             window.alert("Please input a message");
-        } else {
-            this.setState({ loadingStatus: true });
+        } else {;
             const singleMessage = {
                 message: this.state.newMessage,
                 userId: 1
@@ -36,6 +33,8 @@ class ChatList extends Component {
 
             // Create the Message and redirect user to Message list
             ChatManager.postMessage(singleMessage)
+            .then(ChatManager.getAllChatUser).then(messages => {
+                this.setState({ messages: messages })})
         }
     };
 
@@ -53,7 +52,6 @@ class ChatList extends Component {
                             onChange={this.handleFieldChange}
                         />
                         <button
-                            disabled={this.state.loadingStatus}
                             onClick={this.constructNewMessage}
                         >Send</button>
                     </form>
