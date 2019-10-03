@@ -90,14 +90,35 @@
       "userId": 1,
       "task": "Give john a tip.",
       "date": "2019-09-18",
-      "complete": false
+      "archived": false
     },
     {
-      "userId": "7",
+      "userId": "2",
       "task": "certify food sources",
       "date": "2019-09-18",
-      "complete": false,
+      "archived": false,
       "id": 2
+    },
+    {
+      "task": "dishes",
+      "date": "Oct. 22",
+      "archived": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "task": "trash",
+      "date": "Dec 12",
+      "archived": false,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "task": "walk dogs",
+      "date": "Oct 6",
+      "archived": false,
+      "userId": 1,
+      "id": 5
     }
   ],
   "news": [
@@ -128,7 +149,7 @@
       "id": 12
     },
     {
-      "title":"Prune your mums" ,
+      "title": "Prune your mums",
       "synopsis": "When to prune your winter mums with John Marra By Josie Fletcher | Posted: Fri 1:43 PM, Sep 13, 2019          HUNTINGTON, W.Va. (WSAZ) -- Former WSAZ Home and Garden Expert John Marra joined Katie and Sarah in Studio 3.   John Marra makes his debut on Studio 3. John says May 15th, June 15th, and July 15th are when you should prune your winter mums.  He also wants everyone to know about beginning beekeepers school at the Cabell County Career Technology Center. Classes are every Tuesday in October. For information on classes call: (304) 528-5108.   Get the latest updates from wsaz.com delivered to your browser  SUBSCRIBE TO PUSH NOTIFICATIONS Weekly Wanted | Huntington parole warrants Marco and Rufus battle for a Studio 3 mug",
       "url": "https://www.wsaz.com/content/news/When-to-prune-your-winter-mums-with-John-Marra-560249901.html",
       "id": 13
