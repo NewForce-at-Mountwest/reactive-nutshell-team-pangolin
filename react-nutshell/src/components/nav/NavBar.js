@@ -19,7 +19,9 @@ class NavBar extends Component {
 					</Nav>
 					<Form inline>
 						<Nav.Link href="/login">Login</Nav.Link>
-						<Nav.Link href="/logout">Logout</Nav.Link>
+						<Nav.Link href="/logout" {...localStorage.clear('activeuser')}>Logout</Nav.Link>
+
+
 					</Form>
 				</Navbar>
 			</>

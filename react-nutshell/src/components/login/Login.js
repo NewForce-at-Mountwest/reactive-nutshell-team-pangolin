@@ -5,7 +5,6 @@ class Login extends Component {
   // Set initial state
   state = {
     name: "",
-    email: "",
     password: ""
   };
 
@@ -17,18 +16,27 @@ class Login extends Component {
     this.setState(stateToChange);
   };
 
+
+
   handleLogin = (e) => {
     e.preventDefault();
-    UserManager.getOne(this.state.name).then(user => {
-      console.log(user)
-      if (user[0].password === this.state.password) {
-        localStorage.setItem("userId", user[0].id);
-      }else(alert("Incorrect password"))
-    });
+    const userName = this.state.name
+    const passwordField = this.state.password
+    UserManager.getOne(userName).then(user => {
+      console.log(userName)
+      {
+      if (passwordField === "")
+      {alert("Please enter password")}
 
+      else if (user[0].password === this.state.password) {
+        localStorage.setItem("userId", user[0].id)}
 
-    this.props.history.push("/");
-  };
+      else {(alert("Incorrect password"))}
+  }
+
+    this.props.history.push("/home")
+  });
+}
 
   render() {
     return (
@@ -36,30 +44,38 @@ class Login extends Component {
         <fieldset>
           <h3>Please sign in</h3>
           <div className="formgrid">
-            <input
+            <p><input
               onChange={this.handleFieldChange}
               type="text"
-              id="libraryName"
+              id="name"
               placeholder="Username"
               required=""
               autoFocus=""
             />
-            <label htmlFor="inputEmail">Username</label>
+            <label htmlFor="inputUserName">Username</label></p>
 
-            <input
+            <p><input
               onChange={this.handleFieldChange}
               type="password"
               id="password"
               placeholder="Password"
               required=""
             />
-            <label htmlFor="inputPassword">Password</label>
+            <label htmlFor="inputPassword">Password</label></p>
           </div>
           <button type="submit">Sign in</button>
-        </fieldset>
+
+
+    <div className="registerButton">
+    <button
+    type="button"
+    onClick = {() => this.props.history.push("/register")}>Register</button>
+
+    </div>
+    </fieldset>
       </form>
     );
   }
-}
+  }
 
 export default Login;

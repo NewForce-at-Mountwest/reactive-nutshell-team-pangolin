@@ -1,34 +1,18 @@
 const remoteURL = "http://localhost:5002"
 
 export default {
-    getOne(id) {
-        return fetch(`${remoteURL}/users/${id}`).then(result => result.json())
+    getOne(userName) {
+        return fetch(`${remoteURL}/users?name=${userName}`).then(result => result.json())
     },
-    // getAll() {
-    //     return fetch(`${remoteURL}/owners`).then(result => result.json())
-    // },
-    // delete(id) {
-    //     return fetch(`${remoteURL}/owners/${id}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(result => result.json())
-    // },
-    // post(newOwner) {
-    //     return fetch(`${remoteURL}/owners`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(newOwner)
-    //     }).then(data => data.json())
-    // },
-    // update(editedOwner) {
-    //     return fetch(`${remoteURL}/owners/${editedOwner.id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(editedOwner)
-    //     }).then(data => data.json());
-    // }
+
+    postNewUser(newUser) {
+        return fetch(`${remoteURL}/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUser)
+        }).then(data => data.json())
+    }
+   
 }
