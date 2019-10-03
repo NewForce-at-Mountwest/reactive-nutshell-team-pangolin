@@ -7,11 +7,19 @@ class ApplicationViews extends Component {
 		return (
 			<React.Fragment>
 				<Route
-					path="/home"
+					path="/"
 					render={props => {
 						return <Home />;
 					}}
 				/>
+				<Route exact path="/users/:userId(\d+)" render={(props) => {
+					// Pass the userId to the XXX???XXX Component
+					return  <Home {...props} userId={parseInt(props.match.params.userId)} />  //<Redirect to="/login" />
+				}} />
+
+
+
+				{/* <Route path="/login" component={Login} /> */}
 			</React.Fragment>
 		);
 	}
