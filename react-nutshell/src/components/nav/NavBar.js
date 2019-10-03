@@ -1,51 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Form from "react-bootstrap/Form";
+// import "./NavBar.css";
 
 class NavBar extends Component {
 	render() {
 		return (
-			<header>
-				<h1 className="site-title">
-					Nutshell
-					<br />
-					<small>Not Facebook</small>
-				</h1>
-				<nav>
-					<ul className="container">
-						<li>
-							<Link className="nav-link" to="/home">
-								Home
-							</Link>
-						</li>
-						<li>
-							<Link className="nav-link" to="/tasks">
-								Tasks
-							</Link>
-						</li>
-						<li>
-							<Link className="nav-link" to="/chat">
-								Chat
-							</Link>
-						</li>
-						<li>
-							<Link className="nav-link" to="/news">
-								News
-							</Link>
-						</li>
-						<li>
-							<Link className="nav-link" to="/events">
-								Events
-							</Link>
-						</li>
-                        <li>
-							<Link className="nav-link" to="/friends">
-								Friends
-							</Link>
-						</li>
-					</ul>
-				</nav>
-			</header>
+			<>
+				<Navbar bg="dark" variant="dark">
+					<Navbar.Brand href="/home">Home</Navbar.Brand>
+					<Nav className="mr-auto">
+						<Nav.Link href="/tasks">Tasks</Nav.Link>
+						<Nav.Link href="/chat">Chat</Nav.Link>
+						<Nav.Link href="/news">News</Nav.Link>
+						<Nav.Link href="/events">Events</Nav.Link>
+					</Nav>
+					<Form inline>
+						<Nav.Link href="/login">Login</Nav.Link>
+						<Nav.Link href="/logout">Logout</Nav.Link>
+					</Form>
+				</Navbar>
+			</>
 		);
 	}
 }
