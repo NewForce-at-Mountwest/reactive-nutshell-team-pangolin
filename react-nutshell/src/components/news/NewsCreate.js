@@ -9,6 +9,7 @@ class NewsCreate extends Component {
 		title: "",
 		synopsis: "",
 		url: "",
+		userId: "",
 		loadingStatus: false
 	};
 
@@ -33,6 +34,7 @@ class NewsCreate extends Component {
 				title: this.state.title,
 				synopsis: this.state.synopsis,
 				url: this.state.url,
+				userId: parseInt(localStorage.getItem("userId")),
 				date: currentTime
 			};
 

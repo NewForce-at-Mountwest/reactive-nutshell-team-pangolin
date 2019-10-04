@@ -4,6 +4,10 @@ import NewsCard from "./NewsCard";
 import NewsManager from "../../modules/NewsManager";
 import Button from "react-bootstrap/Button";
 
+// localStorage.setItem("userId", 4);
+const userId = parseInt(localStorage.getItem("userId"));
+// console.log(userId);
+
 class NewsList extends Component {
 	//define what this component needs to render
 	state = {
@@ -13,7 +17,7 @@ class NewsList extends Component {
 	};
 
 	componentDidMount() {
-		NewsManager.getAll().then(newsArticles => {
+		NewsManager.getAll(userId).then(newsArticles => {
 			newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 			this.setState({
 				news: newsArticles
@@ -23,7 +27,7 @@ class NewsList extends Component {
 
 	deleteNewsArticle = id => {
 		NewsManager.delete(id).then(() => {
-			NewsManager.getAll().then(newsArticles => {
+			NewsManager.getAll(userId).then(newsArticles => {
 				newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 				this.setState({
 					news: newsArticles

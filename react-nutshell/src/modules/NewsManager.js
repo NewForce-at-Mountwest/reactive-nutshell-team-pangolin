@@ -4,10 +4,12 @@ export default {
 	get(id) {
 		return fetch(`${remoteURL}/news/${id}`).then(result => result.json());
 	},
-	getAll() {
-		return fetch(`${remoteURL}/news`).then(result => result.json());
-    },
-    getAllSortByDate() {
+	getAll(userId) {
+		return fetch(`${remoteURL}/news?userId=${userId}`).then(result =>
+			result.json()
+		);
+	},
+	getAllSortByDate() {
 		return fetch(`${remoteURL}/news`).then(result => result.json());
 	},
 	delete(id) {
