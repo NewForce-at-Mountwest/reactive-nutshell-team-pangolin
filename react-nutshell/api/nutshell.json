@@ -59,6 +59,18 @@
       "email": "bob@mail.com",
       "password": "1234",
       "id": 19
+    },
+    {
+      "name": "Fred",
+      "email": "fred@mail.net",
+      "password": "1234",
+      "id": 20
+    },
+    {
+      "name": "Larry",
+      "email": "Larry@Larry",
+      "password": "1234",
+      "id": 21
     }
   ],
   "friends": [

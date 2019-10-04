@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import UserManager from "../../Modules/UserManager";
 
+
 class Login extends Component {
   // Set initial state
   state = {
@@ -42,7 +43,11 @@ class Login extends Component {
     return (
       <form onSubmit={this.handleLogin}>
         <fieldset>
+          <h1>Welcome to Nutshell!!</h1>
+          <h2>Better then Facebook!!</h2>
+          <br></br>
           <h3>Please sign in</h3>
+          <br></br>
           <div className="formgrid">
             <p><input
               onChange={this.handleFieldChange}
@@ -54,6 +59,7 @@ class Login extends Component {
             />
             <label htmlFor="inputUserName">Username</label></p>
 
+
             <p><input
               onChange={this.handleFieldChange}
               type="password"
@@ -64,9 +70,13 @@ class Login extends Component {
             <label htmlFor="inputPassword">Password</label></p>
           </div>
           <button type="submit">Sign in</button>
-
+          <br></br>
 
     <div className="registerButton">
+    <br></br>
+    <br></br>
+    <h3>Or register a new account.</h3>
+    <br></br>
     <button
     type="button"
     onClick = {() => this.props.history.push("/register")}>Register</button>
