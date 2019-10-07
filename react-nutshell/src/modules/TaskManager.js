@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
   },
   getAll() {
-    return fetch(`${remoteURL}/tasks?userId=2&&archived=false`).then(result => result.json())
+    return fetch(`${remoteURL}/tasks?userId=${localStorage.getItem("userId")}&&archived=false`).then(result => result.json())
   },
   archive(id) {
     return fetch(`${remoteURL}/tasks/${id}`, {
@@ -17,16 +17,16 @@ export default {
     })
     .then(result => result.json())
   },
-  unarchive(id) {
-    return fetch(`${remoteURL}/tasks/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({archived: false})
-    })
-    .then(result => result.json())
-  },
+  // unarchive(id) {
+  //   return fetch(`${remoteURL}/tasks/${id}`, {
+  //       method: "PATCH",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({archived: false})
+  //   })
+  //   .then(result => result.json())
+  // },
   post(newTask) {
     return fetch(`${remoteURL}/tasks`, {
         method: "POST",

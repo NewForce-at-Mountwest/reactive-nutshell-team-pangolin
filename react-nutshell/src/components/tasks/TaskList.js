@@ -58,7 +58,7 @@ class TaskList extends Component {
         task: this.state.task,
         date: this.state.date,
         archived: false,
-        userId: 2
+        userId: localStorage.getItem("userId")
       };
 
       // Create the task and close new fields to view only list of items
@@ -104,7 +104,7 @@ class TaskList extends Component {
                 placeholder="Date"
               />
             </div>
-            <div className="alignBtnRt">
+            <div className="align-btn">
               <Button
                 variant="info"
                 type="button"
