@@ -21,6 +21,18 @@ class ChatList extends Component {
         })
     }
 
+    deleteMessage = id => {
+        ChatManager.delete(id)
+        .then(() => {
+          ChatManager.getAllChatUser()
+          .then((newMessages) => {
+            this.setState({
+                messages: newMessages
+            })
+          })
+        })
+      }
+
     constructNewMessage = evt => {
         evt.preventDefault();
         if (this.state.newMessage === "") {
@@ -42,7 +54,10 @@ class ChatList extends Component {
         return (
             <div className="container-cards">
                 {this.state.messages.map(message =>
-                    <ChatCard key={message.id} message={message} />)}
+                    <ChatCard
+                    key={message.id}
+                    message={message}
+                    deleteMessage={this.deleteMessage} />)}
                 <div className="input-field">
                     <form>
                         <input
