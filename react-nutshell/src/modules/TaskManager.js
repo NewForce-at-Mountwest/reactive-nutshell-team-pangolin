@@ -5,7 +5,7 @@ export default {
     return fetch(`${remoteURL}/tasks/${id}`).then(result => result.json())
   },
   getAll() {
-    return fetch(`${remoteURL}/tasks`).then(result => result.json())
+    return fetch(`${remoteURL}/tasks?userId=2&&archived=false`).then(result => result.json())
   },
   archive(id) {
     return fetch(`${remoteURL}/tasks/${id}`, {

@@ -93,32 +93,39 @@
       "archived": false
     },
     {
-      "userId": "2",
-      "task": "certify food sources",
-      "date": "2019-09-18",
+      "id": 2,
+      "task": "certify food ingredients",
+      "date": "2019-09-20",
       "archived": false,
-      "id": 2
+      "userId": "2"
     },
     {
       "task": "dishes",
-      "date": "Oct. 22",
+      "date": "2019-10-07",
       "archived": false,
       "userId": 1,
       "id": 3
     },
     {
       "task": "trash",
-      "date": "Dec 12",
+      "date": "2019-10-07",
       "archived": false,
       "userId": 2,
       "id": 4
     },
     {
       "task": "walk dogs",
-      "date": "Oct 6",
+      "date": "2019-10-07",
       "archived": false,
       "userId": 1,
       "id": 5
+    },
+    {
+      "id": 6,
+      "task": "take out the garbage",
+      "date": "2019-10-02",
+      "archived": false,
+      "userId": 2
     }
   ],
   "news": [
