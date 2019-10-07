@@ -87,7 +87,7 @@ class TaskList extends Component {
       <>
         <h1>Tasks</h1>
         <form>
-          <fieldset>
+          <fieldset id="newTaskField">
             <div className="formgrid">
               <input
                 type="text"
@@ -142,7 +142,8 @@ class TaskList extends Component {
               </>
             ) : (
               <>
-                <p
+              <div id="tasks-display"
+                <p class="listItem"
                   id="task"
                   onClick={() => this.setState({
                       taskToEdit: singleTask,
@@ -151,7 +152,7 @@ class TaskList extends Component {
                 >
                   {singleTask.task}
                 </p>
-                <p id="date">{singleTask.date}</p>
+                <p class="listItem" id="date">{singleTask.date}</p>
                 <input id="checkbox" type="checkbox" onClick={()=>this.handleCheckboxChange(singleTask.id)}></input>
               </>
             );

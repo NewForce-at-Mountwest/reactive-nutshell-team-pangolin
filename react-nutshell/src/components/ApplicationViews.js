@@ -45,15 +45,9 @@ class ApplicationViews extends Component {
         />
 
         <Route
-          path="/home"
-          render={props => {
-            return <Home />;
-          }}
-        />
-        <Route
           path="/tasks"
           render={props => {
-            return <TaskList />;
+            return <TaskList {...props} />;
           }}
         />
       </React.Fragment>
