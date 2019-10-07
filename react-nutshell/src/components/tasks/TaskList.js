@@ -86,9 +86,11 @@ class TaskList extends Component {
   render() {
     return (
       <>
+      <body id="task-body">
         <h1>Tasks</h1>
         <form>
-          <fieldset id="newTaskField">
+          <fieldset>
+            <div id="newTaskField">
             <div className="formgrid">
               <input
                 type="text"
@@ -114,7 +116,7 @@ class TaskList extends Component {
               >
                 Add
               </Button>
-            </div>
+            </div></div>
           </fieldset>
         </form>
         <section className="section-content"></section>
@@ -144,6 +146,7 @@ class TaskList extends Component {
             ) : (
               <>
               <div id="tasks-display">
+                <input id="checkbox" type="checkbox" onClick={()=>this.handleCheckboxChange(singleTask.id)}></input>
                 <p class="listItem"
                   id="task"
                   onClick={() => this.setState({
@@ -154,12 +157,12 @@ class TaskList extends Component {
                   {singleTask.task}
                 </p>
                 <p class="listItem" id="date">{singleTask.date}</p>
-                <input id="checkbox" type="checkbox" onClick={()=>this.handleCheckboxChange(singleTask.id)}></input>
               </div>
               </>
             );
           })}
         </div>
+        </body>
       </>
     );
   }

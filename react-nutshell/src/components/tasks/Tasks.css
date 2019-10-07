@@ -1,9 +1,9 @@
-/* h1{
-    align-content: center
-} */
+#task-body{
+    margin-left: 5em;
+    margin-top:3em
+}
 #newTaskField{
     display: flex;
-    flex-direction: column
 }
 .form-control{
     width: 10em;
@@ -13,8 +13,17 @@
 .listItem{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.5em;
+    margin: .5em;
+    bottom: 1em
 }
-/* #tasks-display{
+#tasks-display{
     display: flex;
     flex-wrap: wrap
-} */
+}
+.align-btn{
+    margin: 1em;
+    margin-top: -.4em
+}
+#checkbox{
+ margin-top: 1.5em
+}

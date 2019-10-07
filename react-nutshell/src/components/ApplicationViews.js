@@ -47,7 +47,9 @@ class ApplicationViews extends Component {
         <Route
           path="/tasks"
           render={props => {
-            return <TaskList {...props} />;
+            return this.isAuthenticated() ? (
+            <TaskList {...props} />)
+            :(<Redirect to="/login" />)
           }}
         />
       </React.Fragment>
