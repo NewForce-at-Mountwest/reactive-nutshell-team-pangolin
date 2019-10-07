@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Home from "./home/Home"
 import Login from "./login/Login"
 import Register from "./login/Register"
+import EventsList from "./events/EventsList"
 import NavBar from "./nav/NavBar"
 
 
@@ -18,24 +19,29 @@ class ApplicationViews extends Component {
 					path="/home"
 					render={props => {
 						return this.isAuthenticated() ? <Home {...props} /> : <Redirect to="/login" />
-						}}/>
+					}} />
 
 				<Route
 					path="/login"
 					render={(props) => {
 						return <Login {...props} />
-						}} />
+					}} />
 
 				<Route path="/logout"
 					render={(props) => {
 						return <Login {...props} />
-						}} />
+					}} />
 
 				<Route path="/register"
-					render = {(props) => {
+					render={(props) => {
 						return <Register {...props} />
-						}}/>
+					}} />
 
+				<Route
+					path="/events"
+					render={props => {
+						return this.isAuthenticated() ? <EventsList {...props} /> : <Redirect to="/login" />
+					}} />
 			</React.Fragment>
 		);
 	}
