@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TaskManager from "../../modules/TaskManager";
 // import TaskItem from "./TaskItem";
 import Button from 'react-bootstrap/Button';
+import "./Tasks.css";
 
 
 class TaskList extends Component {
