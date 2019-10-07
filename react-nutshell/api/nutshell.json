@@ -47,188 +47,10 @@
       "email": "slim@mail",
       "password": "123",
       "id": 17
-    },
-    {
-      "name": "Slim",
-      "email": "slim@mail",
-      "password": "123",
-      "id": 18
-    },
-    {
-      "name": "Bob",
-      "email": "bob@mail.com",
-      "password": "1234",
-      "id": 19
-    },
-    {
-      "name": "Fred",
-      "email": "fred@mail.net",
-      "password": "1234",
-      "id": 20
-    },
-    {
-      "name": "Larry",
-      "email": "Larry@Larry",
-      "password": "1234",
-      "id": 21
-    },
-    {
-      "name": "Sally",
-      "email": "Sally@sally.com",
-      "password": "1234",
-      "id": 22
-    },
-    {
-      "name": "Sue",
-      "email": "Sue",
-      "password": "1234",
-      "id": 23
-    },
-    {
-      "name": "Jane",
-      "email": "Jane",
-      "password": "1234",
-      "id": 24
-    },
-    {
-      "name": "Nan",
-      "email": "Nan",
-      "password": "1234",
-      "id": 25
-    },
-    {
-      "name": "Lance",
-      "email": "lance",
-      "password": "1234",
-      "id": 26
-    },
-    {
-      "name": "Harvey",
-      "email": "a",
-      "password": "1234",
-      "id": 27
-    },
-    {
-      "name": "h",
-      "email": "tf",
-      "password": "1234",
-      "id": 28
-    },
-    {
-      "name": "AYYY",
-      "email": "AYYY",
-      "password": "AYYY",
-      "id": 29
-    },
-    {
-      "name": "Linda",
-      "email": "Linda",
-      "password": "1234",
-      "id": 30
-    },
-    {
-      "name": "Tina",
-      "email": "T",
-      "password": "1234",
-      "id": 31
-    },
-    {
-      "name": "Mary",
-      "email": "M",
-      "password": "1234",
-      "id": 32
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "1234",
-      "id": 33
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "1234",
-      "id": 34
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "1234",
-      "id": 35
-    },
-    {
-      "name": "Bob",
-      "email": "bob@mail.com",
-      "password": "1234",
-      "id": 36
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "1234",
-      "id": 37
-    },
-    {
-      "name": "dur",
-      "email": "s",
-      "password": "1234",
-      "id": 38
-    },
-    {
-      "name": "Dur",
-      "email": "a",
-      "password": "a",
-      "id": 39
-    },
-    {
-      "name": "Dur",
-      "email": "s",
-      "password": "s",
-      "id": 40
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "a",
-      "id": 41
-    },
-    {
-      "name": "Dur",
-      "email": "ad",
-      "password": "a",
-      "id": 42
-    },
-    {
-      "name": "aaaaaaaaaaa",
-      "email": "a",
-      "password": "a",
-      "id": 43
-    },
-    {
-      "name": "Dur",
-      "email": "daryl.adkins@gmail.com",
-      "password": "d",
-      "id": 44
-    },
-    {
-      "name": "Doug",
-      "email": "daryl.adkins@gmail.com",
-      "password": "a",
-      "id": 45
-    },
-    {
-      "name": "pizza",
-      "email": "wd",
-      "password": "sd",
-      "id": 46
     }
   ],
   "friends": [
-    {
-      "id": 1,
-      "userId": 1,
-      "otherFriendId": 2
-    }
+
   ],
   "messages": [
     {
@@ -256,15 +78,44 @@
     {
       "id": 1,
       "userId": 1,
-      "task": "Give Levi a dollar."
+      "task": "Give john a tip.",
+      "date": "2019-09-18",
+      "archived": false
     },
     {
-      "userId": "7",
-      "task": "cer",
-      "description": "recec",
-      "dueDate": "2019-09-18",
-      "complete": false,
-      "id": 2
+      "id": 2,
+      "task": "certify food ingredients",
+      "date": "2019-08-20",
+      "archived": false,
+      "userId": "2"
+    },
+    {
+      "task": "dishes",
+      "date": "2019-10-07",
+      "archived": false,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "task": "take trash out",
+      "date": "2019-10-07",
+      "archived": false,
+      "userId": 2
+    },
+    {
+      "task": "walk dogs",
+      "date": "2019-10-07",
+      "archived": false,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "task": "take out the garbage",
+      "date": "2019-10-02",
+      "archived": false,
+      "userId": 2
     }
   ],
   "news": [
@@ -306,7 +157,7 @@
       "name": "Give Levi your car keys",
       "date": "2019-09-18",
       "location": "Huntington!!!!!",
-      "userId": "7",
+      "userId": 7,
       "id": 2
     },
     {
