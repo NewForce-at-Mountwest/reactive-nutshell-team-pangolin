@@ -44,7 +44,7 @@ class Login extends Component {
       <form onSubmit={this.handleLogin}>
         <fieldset>
           <h1>Welcome to Nutshell!!</h1>
-          <h2>Better then Facebook!!</h2>
+          <h2>Better than Facebook!!</h2>
           <br></br>
           <h3>Please sign in</h3>
           <br></br>

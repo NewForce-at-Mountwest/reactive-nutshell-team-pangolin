@@ -29,10 +29,18 @@ class Register extends Component {
                 email: this.state.email,
                 password: this.state.password
             };
-            
+            // const validUser = newUser.name
+            // UserManager.getOne(validUser)
+            // .then()
+            // if (this.state.name === validUser) {window.alert("User already registered, please use another User Name")};
+
+
+
             UserManager.postNewUser(newUser)
-                .then
-                (this.props.history.push("/home"));
+            .then((newUserObject) => {
+                localStorage.setItem("userId", newUserObject.id)}
+            )
+            .then(() => this.props.history.push("/home"));
 
         }
     };
@@ -48,7 +56,7 @@ class Register extends Component {
                     <fieldset>
                         <div className="formgrid">
                             <h1>Welcome to Nutshell!!</h1>
-                            <h2>Better then Facebook!!</h2>
+                            <h2>Better than Facebook!!</h2>
                             <br></br>
                             <br></br>
                             <h3>Please enter in a username, email address and personal password to register for access.</h3>

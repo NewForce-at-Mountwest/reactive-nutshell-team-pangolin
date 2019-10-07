@@ -13,6 +13,9 @@ export default {
             },
             body: JSON.stringify(newUser)
         }).then(data => data.json())
-    }
-   
+    },
+    getAll() {
+        return fetch(`${remoteURL}/users`).then(result => result.json()
+        )
+    },
 }
