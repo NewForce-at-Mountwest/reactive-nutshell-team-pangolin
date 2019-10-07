@@ -1,9 +1,17 @@
-import { Route } from "react-router-dom";
+import { Route, withRouter, Redirect } from "react-router-dom"
 import React, { Component } from "react";
 import Home from "./home/Home"
 import ChatList from "./chat/ChatList"
+import Login from "./login/Login"
+import Register from "./login/Register"
+import NavBar from "./nav/NavBar"
+
+
 
 class ApplicationViews extends Component {
+
+	isAuthenticated = () => localStorage.getItem("userId") !== null
+
 	render() {
 		return (
 			<React.Fragment>
@@ -11,16 +19,36 @@ class ApplicationViews extends Component {
 				<Route
 					path="/home"
 					render={props => {
-						return <Home />;
-					}}
-				/>
+						return this.isAuthenticated() ? <Home {...props} /> : <Redirect to="/login" />
+					}} />
 				{/* chat home */}
 				<Route
 					path="/chat"
 					render={props => {
-						return <ChatList />;
+						if (this.isAuthenticated()) {
+							return <ChatList  {...props} />
+						} else {
+							return <Redirect to="/login" />
+						}
 					}}
 				/>
+				{/* login */}
+				<Route
+					path="/login"
+					render={(props) => {
+						return <Login {...props} />
+					}} />
+				{/* logout */}
+				<Route path="/logout"
+					render={(props) => {
+						return <Login {...props} />
+					}} />
+				{/* register */}
+				<Route path="/register"
+					render={(props) => {
+						return <Register {...props} />
+					}} />
+
 			</React.Fragment>
 		);
 	}

@@ -6,7 +6,10 @@ import Form from "react-bootstrap/Form";
 // import "./NavBar.css";
 
 class NavBar extends Component {
-	render() {
+
+	isLoggedIn = () => localStorage.getItem("userId") !== null
+
+	render() { 
 		return (
 			<>
 				<Navbar bg="dark" variant="dark">
@@ -17,9 +20,12 @@ class NavBar extends Component {
 						<Nav.Link href="/news">News</Nav.Link>
 						<Nav.Link href="/events">Events</Nav.Link>
 					</Nav>
+
 					<Form inline>
-						<Nav.Link href="/login">Login</Nav.Link>
-						<Nav.Link href="/logout">Logout</Nav.Link>
+						<Nav.Link href="/login">Login</Nav.Link> :
+						<Nav.Link href="/logout" {...localStorage.clear('activeuser')}>Logout</Nav.Link>
+
+
 					</Form>
 				</Navbar>
 			</>
