@@ -142,7 +142,7 @@ class TaskList extends Component {
               </>
             ) : (
               <>
-              <div id="tasks-display"
+              <div id="tasks-display">
                 <p class="listItem"
                   id="task"
                   onClick={() => this.setState({
@@ -154,6 +154,7 @@ class TaskList extends Component {
                 </p>
                 <p class="listItem" id="date">{singleTask.date}</p>
                 <input id="checkbox" type="checkbox" onClick={()=>this.handleCheckboxChange(singleTask.id)}></input>
+              </div>
               </>
             );
           })}
