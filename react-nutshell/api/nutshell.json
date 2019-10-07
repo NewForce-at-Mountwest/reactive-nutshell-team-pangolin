@@ -95,7 +95,7 @@
     {
       "id": 2,
       "task": "certify food ingredients",
-      "date": "2019-09-20",
+      "date": "2019-08-20",
       "archived": false,
       "userId": "2"
     },
@@ -107,11 +107,11 @@
       "id": 3
     },
     {
-      "task": "trash",
+      "id": 4,
+      "task": "take trash out",
       "date": "2019-10-07",
       "archived": false,
-      "userId": 2,
-      "id": 4
+      "userId": 2
     },
     {
       "task": "walk dogs",

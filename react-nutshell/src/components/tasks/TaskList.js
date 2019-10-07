@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TaskManager from "../../modules/TaskManager";
 // import TaskItem from "./TaskItem";
+import Button from 'react-bootstrap/Button';
 
 
 class TaskList extends Component {
@@ -104,13 +105,14 @@ class TaskList extends Component {
               />
             </div>
             <div className="alignBtnRt">
-              <button
+              <Button
+                variant="info"
                 type="button"
                 // disabled={this.state.loadingStatus}
                 onClick={this.buildTask}
               >
                 Add
-              </button>
+              </Button>
             </div>
           </fieldset>
         </form>
