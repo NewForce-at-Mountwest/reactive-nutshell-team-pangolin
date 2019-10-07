@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserManager from '../../Modules/UserManager'
+import UserManager from '../../modules/UserManager'
 
 
 class Register extends Component {
