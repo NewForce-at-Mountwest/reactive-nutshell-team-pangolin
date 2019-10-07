@@ -4,6 +4,7 @@ import Home from "./home/Home"
 import ChatList from "./chat/ChatList"
 import Login from "./login/Login"
 import Register from "./login/Register"
+import EventsList from "./events/EventsList"
 import NavBar from "./nav/NavBar"
 
 
@@ -16,12 +17,14 @@ class ApplicationViews extends Component {
 		return (
 			<React.Fragment>
 				{/* home */}
+
 				<Route
 					path="/home"
 					render={props => {
 						return this.isAuthenticated() ? <Home {...props} /> : <Redirect to="/login" />
 					}} />
 				{/* chat home */}
+				
 				<Route
 					path="/chat"
 					render={props => {
@@ -33,22 +36,30 @@ class ApplicationViews extends Component {
 					}}
 				/>
 				{/* login */}
+
 				<Route
 					path="/login"
 					render={(props) => {
 						return <Login {...props} />
 					}} />
 				{/* logout */}
+
 				<Route path="/logout"
 					render={(props) => {
 						return <Login {...props} />
 					}} />
 				{/* register */}
+
 				<Route path="/register"
 					render={(props) => {
 						return <Register {...props} />
 					}} />
 
+				<Route
+					path="/events"
+					render={props => {
+						return this.isAuthenticated() ? <EventsList {...props} /> : <Redirect to="/login" />
+					}} />
 			</React.Fragment>
 		);
 	}

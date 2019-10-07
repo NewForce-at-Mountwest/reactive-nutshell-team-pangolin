@@ -26,18 +26,18 @@ class Login extends Component {
     UserManager.getOne(userName).then(user => {
       console.log(userName)
       {
-      if (passwordField === "")
-      {alert("Please enter password")}
+        if (passwordField === "") { alert("Please enter password") }
 
-      else if (user[0].password === this.state.password) {
-        localStorage.setItem("userId", user[0].id)}
+        else if (user[0].password === this.state.password) {
+          localStorage.setItem("userId", user[0].id)
+        }
 
-      else {(alert("Incorrect password"))}
+        else { (alert("Incorrect password")) }
+      }
+
+      this.props.history.push("/home")
+    });
   }
-
-    this.props.history.push("/home")
-  });
-}
 
   render() {
     return (
@@ -57,7 +57,7 @@ class Login extends Component {
               required=""
               autoFocus=""
             />
-            <label htmlFor="inputUserName">Username</label></p>
+              <label htmlFor="inputUserName">Username</label></p>
 
 
             <p><input
@@ -67,25 +67,25 @@ class Login extends Component {
               placeholder="Password"
               required=""
             />
-            <label htmlFor="inputPassword">Password</label></p>
+              <label htmlFor="inputPassword">Password</label></p>
           </div>
           <button type="submit">Sign in</button>
           <br></br>
 
-    <div className="registerButton">
-    <br></br>
-    <br></br>
-    <h3>Or register a new account.</h3>
-    <br></br>
-    <button
-    type="button"
-    onClick = {() => this.props.history.push("/register")}>Register</button>
+          <div className="registerButton">
+            <br></br>
+            <br></br>
+            <h3>Or register a new account.</h3>
+            <br></br>
+            <button
+              type="button"
+              onClick={() => this.props.history.push("/register")}>Register</button>
 
-    </div>
-    </fieldset>
+          </div>
+        </fieldset>
       </form>
     );
   }
-  }
+}
 
 export default Login;
