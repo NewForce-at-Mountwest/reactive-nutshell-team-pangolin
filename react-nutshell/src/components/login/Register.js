@@ -16,34 +16,64 @@ class Register extends Component {
         this.setState(stateToChange);
     };
 
-    /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-    */
+
+
+    // componentDidMount() {
+    //     //getAll from UserManager and hang on to that data; put it in state
+    //     UserManager.getAll()
+    //         .then((usersFromDatabase) => {
+    //             console.log(usersFromDatabase)
+    //             this.setState({
+    //                 users: usersFromDatabase
+    //                 })
+    //                 console.log(this.state.users)
+    //         });
+    //         const hasMatch = false
+    //         for (var index = 0; index < json.length; ++index) {
+
+    //             const name = json[i]
+
+    //             if (name === this.state.name) {
+    //                 hasMatch = true;
+    //                 window.alert("User already registered, please use another User Name")
+    //             }
+    //         }
+    // }
+
+
+
     constructNewUser = evt => {
         evt.preventDefault();
         if (this.state.name === "" || this.state.email === "" || this.state.password === "") {
             window.alert("Please input name, email, and create a password");
+
         } else {
-            this.setState({ loadingStatus: true });
-            const newUser = {
-                name: this.state.name,
-                email: this.state.email,
-                password: this.state.password
-            };
-            // const validUser = newUser.name
-            // UserManager.getOne(validUser)
-            // .then()
-            // if (this.state.name === validUser) {window.alert("User already registered, please use another User Name")};
+            UserManager.getOne(this.state.name).then(userBack => {
+
+                if (userBack[0]) {
+                    window.alert("User already registered, please use another User Name")
+                }
+                else {
+                    this.setState({ loadingStatus: true });
+                    const newUser = {
+                        name: this.state.name,
+                        email: this.state.email,
+                        password: this.state.password
+                    }
 
 
-
-            UserManager.postNewUser(newUser)
-            .then((newUserObject) => {
-                localStorage.setItem("userId", newUserObject.id)}
-            )
-            .then(() => this.props.history.push("/home"));
-
+                    console.log(newUser)
+                    UserManager.postNewUser(newUser)
+                        .then((newUserObject) => {
+                            localStorage.setItem("userId", newUserObject.id)
+                        }
+                        )
+                        .then(() => this.props.history.push("/home"));
+                }
+            })
         }
     };
+
 
 
 
