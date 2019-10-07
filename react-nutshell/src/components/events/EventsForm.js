@@ -5,9 +5,10 @@ import EventsManager from '../../modules/EventsManager';
 
 class EventForm extends Component {
     state = {
-        eventName: "",
-        eventDate: "",
-        eventLocation: "",
+        name: "",
+        date: "",
+        location: "",
+        userId: localStorage.getItem("userId"),
         loadingStatus: false,
 
     };
@@ -23,14 +24,15 @@ class EventForm extends Component {
     */
     constructNewEvent = evt => {
         evt.preventDefault();
-        if (this.state.eventName === "" || this.state.eventDate === "" || this.state.eventLocation === ""){
+        if (this.state.name === "" || this.state.date === "" || this.state.location === ""){
             window.alert("Please input event name, date and location.");
         } else {
             this.setState({ loadingStatus: true });
             const newEvent = {
                 name: this.state.eventName,
                 date: this.state.eventDate,
-                location: this.state.eventLocation
+                location: this.state.eventLocation,
+                userId: localStorage.getItem("userId")
             };
 
             // Create the event and redirect user to event list
@@ -68,21 +70,28 @@ class EventForm extends Component {
                         />
                         <label htmlFor="name">Event Name</label>
                         <br></br>
-                        <input
+                        {/* <input
                         type="text"
                         required
-                        onChange={this.handleFieldChange}
+                        onChange={this.handleFieldChange} */}
 
-                        id="date"
-                        placeholder="Event Date"
-                        />
-                        <label htmlFor="date">Event Date</label>
-                        <br></br>
+                        <p><input
+                type="date"
+                required
+                onChange={this.handleFieldChange}
+                id="date"
+                placeholder="Date"
+              /><label htmlFor="date">Event Date</label></p>
+                        {/* // id="date"
+                        // placeholder="Event Date"
+                        // />
+                        // <label htmlFor="date">Event Date</label>
+                        // <br></br> */}
 
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
+                     <input
+                        // type="text"
+                        // required
+                        // onChange={this.handleFieldChange}
 
                         id="location"
                         placeholder="Event Location"
