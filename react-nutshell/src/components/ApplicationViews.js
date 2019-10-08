@@ -1,4 +1,4 @@
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home"
 import ChatList from "./chat/ChatList"
@@ -7,22 +7,28 @@ import Register from "./login/Register"
 import EventsList from "./events/EventsList"
 import TaskList from "./tasks/TaskList";
 import NavBar from "./nav/NavBar";
+import NewsList from "./news/NewsList";
+import NewsCreate from "./news/NewsCreate";
+import NewsEdit from "./news/NewsEdit";
 
 
 class ApplicationViews extends Component {
-
-	isAuthenticated = () => localStorage.getItem("userId") !== null
+	isAuthenticated = () => localStorage.getItem("userId") !== null;
 
 	render() {
 		return (
 			<React.Fragment>
-				{/* home */}
-
 				<Route
 					path="/home"
 					render={props => {
-						return this.isAuthenticated() ? <Home {...props} /> : <Redirect to="/login" />
-					}} />
+						return this.isAuthenticated() ? (
+							<Home {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
+
 				{/* chat home */}
 
 				<Route
@@ -36,21 +42,6 @@ class ApplicationViews extends Component {
 					}}
 				/>
 
-				<Route
-					path="/events"
-					render={props => {
-						return this.isAuthenticated() ? <EventsList {...props} /> : <Redirect to="/login" />
-					}} />
-				<Route
-					path="/home"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<Home {...props} />
-						) : (
-								<Redirect to="/login" />
-							);
-					}}
-				/>
 
 				<Route
 					path="/login"
@@ -76,7 +67,43 @@ class ApplicationViews extends Component {
 				<Route
 					path="/tasks"
 					render={props => {
-						return <TaskList {...props} />;
+						return this.isAuthenticated() ? (
+							<TaskList {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
+
+				<Route
+					exact
+					path="/news"
+					render={props => {
+						return this.isAuthenticated() ? (
+							<NewsList {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
+				<Route
+					path="/news/create"
+					render={props => {
+						return this.isAuthenticated() ? (
+							<NewsCreate {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
+				<Route
+					path="/news/:newsId(\d+)/edit"
+					render={props => {
+						return this.isAuthenticated() ? (
+							<NewsEdit {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
 					}}
 				/>
 			</React.Fragment>
