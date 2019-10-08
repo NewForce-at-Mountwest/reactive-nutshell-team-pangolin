@@ -114,11 +114,11 @@
       "userId": 2
     },
     {
-      "task": "walk dogs",
+      "id": 5,
+      "task": "walk dog",
       "date": "2019-10-07",
       "archived": false,
-      "userId": 1,
-      "id": 5
+      "userId": 1
     },
     {
       "id": 6,
