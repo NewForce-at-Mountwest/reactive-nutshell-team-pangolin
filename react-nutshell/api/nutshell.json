@@ -49,9 +49,7 @@
       "id": 17
     }
   ],
-  "friends": [
-
-  ],
+  "friends": [],
   "messages": [
     {
       "userId": 1,
@@ -154,18 +152,32 @@
   ],
   "events": [
     {
-      "name": "Give Levi your car keys",
-      "date": "2019-09-18",
-      "location": "Huntington!!!!!",
-      "userId": 7,
-      "id": 2
+      "name": "Party",
+      "date": "2019-10-09",
+      "location": "Woods",
+      "userId": "8",
+      "id": 4
     },
     {
-      "name": "Don't give LEVI your car keys!!!",
-      "date": "2019-09-18",
-      "location": "nope",
-      "userId": "7",
-      "id": 3
+      "name": "Lunch",
+      "date": "2019-10-08",
+      "location": "Home",
+      "userId": "8",
+      "id": 5
+    },
+    {
+      "name": "Dinner",
+      "date": "2019-10-08",
+      "location": "Home",
+      "userId": "8",
+      "id": 6
+    },
+    {
+      "name": "Party",
+      "date": "2019-10-09",
+      "location": "River",
+      "userId": "8",
+      "id": 7
     }
   ]
 }

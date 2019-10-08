@@ -53,7 +53,7 @@ class ApplicationViews extends Component {
 
         />
         <Route
-          path="/events"
+          exact path="/events"
           render={props => {
             return this.isAuthenticated() ? (
               <EventsList {...props} />
