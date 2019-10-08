@@ -6,6 +6,9 @@ class ChatList extends Component {
     state = {
         messages: [],
         newMessage: "",
+        message: "",
+        messageId: "",
+        userId: ""
     }
 
     handleFieldChange = evt => {
@@ -16,37 +19,57 @@ class ChatList extends Component {
 
     componentDidMount() {
         ChatManager.getAllChatUser().then(messages => {
-            this.setState({ messages: messages }
+            this.setState({ messages: messages
+            }
             )
         })
     }
 
+    editMessage = () => {
+        const editedMessage = {
+            message: this.state.message,
+            id: this.state.messageId,
+            userId: this.state.userId
+        }
+        ChatManager.update(editedMessage)
+            .then(ChatManager.getAllChatUser).then(messages => {
+                this.setState({ messages: messages, message: "", messageId: "", userId: "" })
+            }
+            )
+    }
+
     deleteMessage = id => {
         ChatManager.delete(id)
-        .then(() => {
-          ChatManager.getAllChatUser()
-          .then((newMessages) => {
-            this.setState({
-                messages: newMessages
+            .then(() => {
+                ChatManager.getAllChatUser()
+                    .then((newMessages) => {
+                        this.setState({
+                            messages: newMessages
+                        })
+                    })
             })
-          })
-        })
-      }
+    }
+
+    renderEditForm = message => {
+        this.setState({ message: message.message, messageId: message.id, userId: message.user.id })
+    }
 
     constructNewMessage = evt => {
         evt.preventDefault();
         if (this.state.newMessage === "") {
             window.alert("Please input a message");
-        } else {;
+        } else {
+            ;
             const singleMessage = {
                 message: this.state.newMessage,
-                userId: 1
+                userId: localStorage.getItem("userId")
             };
 
             // Create the Message and redirect user to Message list
             ChatManager.postMessage(singleMessage)
-            .then(ChatManager.getAllChatUser).then(messages => {
-                this.setState({ messages: messages })})
+                .then(ChatManager.getAllChatUser).then(messages => {
+                    this.setState({ messages: messages })
+                })
         }
     };
 
@@ -54,10 +77,32 @@ class ChatList extends Component {
         return (
             <div className="container-cards">
                 {this.state.messages.map(message =>
-                    <ChatCard
-                    key={message.id}
-                    message={message}
-                    deleteMessage={this.deleteMessage} />)}
+
+                    this.state.messageId === message.id ? (
+                        <>
+                            <input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="message"
+                                value={this.state.message}
+                            />
+
+                            <button
+                                type="button"
+                                onClick={this.editMessage}>
+                                Save</button>
+
+                        </>
+                    ) : (
+                            <ChatCard
+                                key={message.id}
+                                message={message}
+                                deleteMessage={this.deleteMessage}
+                                renderEditForm={this.renderEditForm} />)
+                )}
+
+
+
                 <div className="input-field">
                     <form>
                         <input
@@ -72,6 +117,7 @@ class ChatList extends Component {
                     </form>
                 </div>
             </div>
+
         )
     }
 }

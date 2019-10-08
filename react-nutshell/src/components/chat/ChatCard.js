@@ -9,7 +9,7 @@ class ChatCard extends Component {
                 <p>Message: {this.props.message.message}</p>
                 <div className="button-container">
                     <button type="button" onClick={() => this.props.deleteMessage(this.props.message.id)}>Delete</button>
-                    <button>Edit</button>
+                    <button type="button" onClick={() => this.props.renderEditForm(this.props.message)}>Edit</button>
                 </div>
             </div>
         );

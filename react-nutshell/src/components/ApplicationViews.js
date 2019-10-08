@@ -1,12 +1,12 @@
-import { Route, withRouter, Redirect } from "react-router-dom"
+import { Route, withRouter, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home"
 import ChatList from "./chat/ChatList"
 import Login from "./login/Login"
 import Register from "./login/Register"
 import EventsList from "./events/EventsList"
-import NavBar from "./nav/NavBar"
-
+import TaskList from "./tasks/TaskList";
+import NavBar from "./nav/NavBar";
 
 
 class ApplicationViews extends Component {
@@ -24,7 +24,7 @@ class ApplicationViews extends Component {
 						return this.isAuthenticated() ? <Home {...props} /> : <Redirect to="/login" />
 					}} />
 				{/* chat home */}
-				
+
 				<Route
 					path="/chat"
 					render={props => {
@@ -35,31 +35,50 @@ class ApplicationViews extends Component {
 						}
 					}}
 				/>
-				{/* login */}
-
-				<Route
-					path="/login"
-					render={(props) => {
-						return <Login {...props} />
-					}} />
-				{/* logout */}
-
-				<Route path="/logout"
-					render={(props) => {
-						return <Login {...props} />
-					}} />
-				{/* register */}
-
-				<Route path="/register"
-					render={(props) => {
-						return <Register {...props} />
-					}} />
 
 				<Route
 					path="/events"
 					render={props => {
 						return this.isAuthenticated() ? <EventsList {...props} /> : <Redirect to="/login" />
 					}} />
+				<Route
+					path="/home"
+					render={props => {
+						return this.isAuthenticated() ? (
+							<Home {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
+
+				<Route
+					path="/login"
+					render={props => {
+						return <Login {...props} />;
+					}}
+				/>
+
+				<Route
+					path="/logout"
+					render={props => {
+						return <Login {...props} />;
+					}}
+				/>
+
+				<Route
+					path="/register"
+					render={props => {
+						return <Register {...props} />;
+					}}
+				/>
+
+				<Route
+					path="/tasks"
+					render={props => {
+						return <TaskList {...props} />;
+					}}
+				/>
 			</React.Fragment>
 		);
 	}
