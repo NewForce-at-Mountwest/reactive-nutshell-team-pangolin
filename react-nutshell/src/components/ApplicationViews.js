@@ -9,84 +9,88 @@ import NewsCreate from "./news/NewsCreate";
 import NewsEdit from "./news/NewsEdit";
 
 class ApplicationViews extends Component {
-	isAuthenticated = () => localStorage.getItem("userId") !== null;
+  isAuthenticated = () => localStorage.getItem("userId") !== null;
 
-	render() {
-		return (
-			<React.Fragment>
-				<Route
-					path="/home"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<Home {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
+  render() {
+    return (
+      <React.Fragment>
+        <Route
+          path="/home"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <Home {...props} />
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        />
 
-				<Route
-					path="/login"
-					render={props => {
-						return <Login {...props} />;
-					}}
-				/>
+        <Route
+          path="/login"
+          render={props => {
+            return <Login {...props} />;
+          }}
+        />
 
-				<Route
-					path="/logout"
-					render={props => {
-						return <Login {...props} />;
-					}}
-				/>
+        <Route
+          path="/logout"
+          render={props => {
+            return <Login {...props} />;
+          }}
+        />
 
-				<Route
-					path="/register"
-					render={props => {
-						return <Register {...props} />;
-					}}
-				/>
+        <Route
+          path="/register"
+          render={props => {
+            return <Register {...props} />;
+          }}
+        />
 
-				<Route
-					path="/tasks"
-					render={props => {
-						return <TaskList {...props} />;
-					}}
-				/>
+        <Route
+          path="/tasks"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <TaskList {...props} />
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        />
 
-				<Route
-					exact
-					path="/news"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsList {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-				<Route
-					path="/news/create"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsCreate {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-				<Route
-					path="/news/:newsId(\d+)/edit"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsEdit {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-			</React.Fragment>
-		);
-	}
+        <Route
+          exact
+          path="/news"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsList {...props} />
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        />
+        <Route
+          path="/news/create"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsCreate {...props} />
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsEdit {...props} />
+            ) : (
+              <Redirect to="/login" />
+            );
+          }}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 export default ApplicationViews;

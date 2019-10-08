@@ -1,20 +1,36 @@
-/* h1{
-    align-content: center
-} */
+/* move tasks body away from the left and top edges of screen */
+#task-body{
+    margin-left: 5em;
+    margin-top:3em
+}
+/* flex row the inputs and add button */
 #newTaskField{
     display: flex;
-    flex-direction: column
 }
+/* css for inputs styling */
 .form-control{
     width: 10em;
     background-color: aqua;
     border: 1px solid black
 }
+/* each individual list item styling */
 .listItem{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.5em;
+    margin: .5em;
+    bottom: 1em
 }
-/* #tasks-display{
+
+#tasks-display{
     display: flex;
     flex-wrap: wrap
-} */
+}
+/* add button up a bit */
+.align-btn{
+    margin: 1em;
+    margin-top: -.4em
+}
+/* move checkbox down beside item text */
+#checkbox{
+ margin-top: 1.5em
+}
