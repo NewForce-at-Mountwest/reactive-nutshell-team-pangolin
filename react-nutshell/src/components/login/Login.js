@@ -27,7 +27,7 @@ class Login extends Component {
       console.log(userName)
       {
         if (passwordField === "") { alert("Please enter password") }
-
+        
         else if (user[0].password === this.state.password) {
           localStorage.setItem("userId", user[0].id)
         }

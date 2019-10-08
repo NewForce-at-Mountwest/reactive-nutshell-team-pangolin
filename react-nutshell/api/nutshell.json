@@ -61,13 +61,7 @@
       "id": 19
     }
   ],
-  "friends": [
-    {
-      "id": 1,
-      "userId": 1,
-      "otherFriendId": 2
-    }
-  ],
+  "friends": [],
   "messages": [
     {
       "userId": 1,
@@ -96,7 +90,7 @@
       "userId": 1,
       "task": "Give john a tip.",
       "date": "2019-09-18",
-      "archived": false
+      "archived": true
     },
     {
       "id": 2,
@@ -108,7 +102,7 @@
     {
       "task": "dishes",
       "date": "2019-10-07",
-      "archived": false,
+      "archived": true,
       "userId": 1,
       "id": 3
     },
@@ -120,11 +114,11 @@
       "userId": 2
     },
     {
-      "task": "walk dogs",
+      "id": 5,
+      "task": "walk dog",
       "date": "2019-10-07",
       "archived": false,
-      "userId": 1,
-      "id": 5
+      "userId": 1
     },
     {
       "id": 6,
@@ -132,6 +126,34 @@
       "date": "2019-10-02",
       "archived": false,
       "userId": 2
+    },
+    {
+      "id": 7,
+      "task": "fix the rotors on the car",
+      "date": "2020-10-09",
+      "archived": true,
+      "userId": "1"
+    },
+    {
+      "id": 8,
+      "task": "fix the rotors on the car",
+      "date": "2019-10-09",
+      "archived": false,
+      "userId": "1"
+    },
+    {
+      "id": 9,
+      "task": "walk our cat",
+      "date": "2019-10-09",
+      "archived": false,
+      "userId": "1"
+    },
+    {
+      "task": "pet the bat",
+      "date": "2019-12-08",
+      "archived": false,
+      "userId": "1",
+      "id": 10
     }
   ],
   "news": [

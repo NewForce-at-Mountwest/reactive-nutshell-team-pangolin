@@ -51,9 +51,12 @@ class ApplicationViews extends Component {
         <Route
           path="/tasks"
           render={props => {
-            return <TaskList {...props} />;
+            return this.isAuthenticated() ? (
+              <TaskList {...props} />
+            ) : (
+                <Redirect to="/login" />
+              );
           }}
-
         />
         <Route
           exact path="/events"
@@ -71,42 +74,40 @@ class ApplicationViews extends Component {
         }} />
 
 
-				<Route
-					exact
-					path="/news"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsList {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-				<Route
-					path="/news/create"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsCreate {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-				<Route
-					path="/news/:newsId(\d+)/edit"
-					render={props => {
-						return this.isAuthenticated() ? (
-							<NewsEdit {...props} />
-						) : (
-							<Redirect to="/login" />
-						);
-					}}
-				/>
-			</React.Fragment>
-		);
-
-
-  }
+        <Route
+          exact
+          path="/news"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsList {...props} />
+            ) : (
+                <Redirect to="/login" />
+              );
+          }}
+        />
+        <Route
+          path="/news/create"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsCreate {...props} />
+            ) : (
+                <Redirect to="/login" />
+              );
+          }}
+        />
+        <Route
+          path="/news/:newsId(\d+)/edit"
+          render={props => {
+            return this.isAuthenticated() ? (
+              <NewsEdit {...props} />
+            ) : (
+                <Redirect to="/login" />
+              );
+          }}
+        />
+      </React.Fragment>
+    );
+   }
 }
 
 
