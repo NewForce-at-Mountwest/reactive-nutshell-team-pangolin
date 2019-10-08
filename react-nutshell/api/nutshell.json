@@ -218,22 +218,44 @@
       "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
       "userId": 19,
       "date": "2019-10-08T15:31:24.952Z"
+    },
+    {
+      "title": "fsdf",
+      "synopsis": "sfs",
+      "url": "https://www.wsaz.com/content/news/Crews-battling-house-fire-in-Ashland-562303451.html",
+      "userId": 8,
+      "date": "2019-10-08T15:57:40.671Z",
+      "id": 27
     }
   ],
   "events": [
     {
-      "name": "Give Levi your car keys",
-      "date": "2019-09-18",
-      "location": "Huntington!!!!!",
-      "userId": 7,
-      "id": 2
+      "name": "Party",
+      "date": "2019-10-09",
+      "location": "Woods",
+      "userId": "8",
+      "id": 4
     },
     {
-      "name": "Don't give LEVI your car keys!!!",
-      "date": "2019-09-18",
-      "location": "nope",
-      "userId": 7,
-      "id": 3
+      "name": "Lunch",
+      "date": "2019-10-08",
+      "location": "Home",
+      "userId": "8",
+      "id": 5
+    },
+    {
+      "name": "Dinner",
+      "date": "2019-10-08",
+      "location": "Home",
+      "userId": "8",
+      "id": 6
+    },
+    {
+      "name": "Party",
+      "date": "2019-10-09",
+      "location": "River",
+      "userId": "8",
+      "id": 7
     }
   ]
 }

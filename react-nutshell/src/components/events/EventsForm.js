@@ -3,11 +3,12 @@ import EventsManager from '../../modules/EventsManager';
 // import LocationManager from '../../modules/LocationManager';
 //import './AnimalForm.css'
 
-class EventForm extends Component {
+class EventsForm extends Component {
     state = {
-        eventName: "",
-        eventDate: "",
-        eventLocation: "",
+        name: "",
+        date: "",
+        location: "",
+        userId: localStorage.getItem("userId"),
         loadingStatus: false,
 
     };
@@ -23,19 +24,21 @@ class EventForm extends Component {
     */
     constructNewEvent = evt => {
         evt.preventDefault();
-        if (this.state.eventName === "" || this.state.eventDate === "" || this.state.eventLocation === ""){
+        if (this.state.eventName === "" || this.state.eventDate === "" || this.state.eventLocation === "") {
+            console.log(this.state.eventName, this.state.eventDate, this.state.eventLocation)
             window.alert("Please input event name, date and location.");
         } else {
             this.setState({ loadingStatus: true });
             const newEvent = {
-                name: this.state.eventName,
-                date: this.state.eventDate,
-                location: this.state.eventLocation
+                name: this.state.name,
+                date: this.state.date,
+                location: this.state.location,
+                userId: localStorage.getItem("userId")
             };
 
             // Create the event and redirect user to event list
             EventsManager.post(newEvent)
-            .then(() => this.props.history.push("/events"));
+                .then(() => this.props.history.push("/events"));
         }
     };
 
@@ -51,60 +54,58 @@ class EventForm extends Component {
     }
 
 
-    render(){
+    render() {
 
-        return(
+        return (
             <>
-            <form>
-                <fieldset>
-                    <div className="formgrid">
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-                        //id must exactly match variable in state
-                        id="name"
-                        placeholder="Event Name"
-                        />
-                        <label htmlFor="name">Event Name</label>
-                        <br></br>
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
+                <form>
+                    <fieldset>
+                        <div className="formgrid">
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                //id must exactly match variable in state
+                                id="name"
+                                placeholder="Event Name"
+                            />
+                            <label htmlFor="name">Event Name</label>
+                            <br></br>
 
-                        id="date"
-                        placeholder="Event Date"
-                        />
-                        <label htmlFor="date">Event Date</label>
-                        <br></br>
-
-                        <input
-                        type="text"
-                        required
-                        onChange={this.handleFieldChange}
-
-                        id="location"
-                        placeholder="Event Location"
-                        />
-                        <label htmlFor="location">Event Location</label>
-                        <br></br>
+                            <p><input
+                                type="date"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="date"
+                                placeholder="Date"
+                            /><label htmlFor="date">Event Date</label></p>
 
 
-                    </div>
-                    <div className="alignRight">
-                        <button
-                        type="button"
-                        disabled={this.state.loadingStatus}
-                        onClick={this.constructNewEvent}
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="location"
+                                placeholder="Event Location"
+                            />
+                            <label htmlFor="location">Event Location</label>
+                            <br></br>
 
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-        </>
+
+                        </div>
+                        <div className="alignRight">
+                            <button
+                                type="button"
+                                disabled={this.state.loadingStatus}
+                                onClick={this.constructNewEvent}
+
+                            >Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </>
         )
     }
 }
 
-export default EventForm
+export default EventsForm
