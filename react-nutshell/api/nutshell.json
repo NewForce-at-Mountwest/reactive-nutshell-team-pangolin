@@ -47,10 +47,26 @@
       "email": "slim@mail",
       "password": "123",
       "id": 17
+    },
+    {
+      "name": "Slim",
+      "email": "slim@mail",
+      "password": "123",
+      "id": 18
+    },
+    {
+      "name": "Alex",
+      "email": "email@email.com",
+      "password": "blah",
+      "id": 19
     }
   ],
   "friends": [
-
+    {
+      "id": 1,
+      "userId": 1,
+      "otherFriendId": 2
+    }
   ],
   "messages": [
     {
@@ -69,7 +85,7 @@
       "id": 4
     },
     {
-      "userId": "4",
+      "userId": 4,
       "message": "It's me Ryan122!",
       "id": 6
     }
@@ -87,7 +103,7 @@
       "task": "certify food ingredients",
       "date": "2019-08-20",
       "archived": false,
-      "userId": "2"
+      "userId": 2
     },
     {
       "task": "dishes",
@@ -120,36 +136,66 @@
   ],
   "news": [
     {
-      "id": 1,
-      "userId": 1,
-      "url": "https://www.herald-dispatch.com/news/school-testing-cabell-wayne-students-stay-above-state-averages/article_41b9e7eb-42d0-58fe-9caf-94cd45140dd4.html",
-      "title": "School testing: Cabell, Wayne students stay above state averages",
-      "synopsis": "Schools in Cabell and Wayne doing good"
+      "userId": 7,
+      "title": "Marshall University signs agreement with South Korean university",
+      "synopsis": "HUNTINGTON — Marshall University and Handong Global University in South Korea have entered into a memorandum of understanding (MOU), pledging to cooperate on programs of mutual consent and benefit.",
+      "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
+      "date": "2019-10-03T19:00:44.557Z",
+      "id": 17
     },
     {
-      "title": "",
-      "synopsis": "",
-      "url": "",
-      "id": 8
+      "userId": 2,
+      "title": "Marshall U",
+      "synopsis": "Marshall Who?",
+      "url": "https://www.marshall.edu/",
+      "date": "2019-10-03T19:27:02.058Z",
+      "id": 19
     },
     {
-      "title": "edited title",
-      "synopsis": "edited synopsis",
-      "url": "edited url.com",
-      "time": 82314.06499999866,
-      "id": 9
+      "userId": 4,
+      "title": "Cabell health department awarded $127K private grant for Harm Reduction Program",
+      "synopsis": "HUNTINGTON — The Cabell-Huntington Health Department has been awarded $127,500 toward its Harm Reduction Program as part of HepConnect’s more than $920,000 total grants for public health organizations in West Virginia.",
+      "url": "https://www.herald-dispatch.com/news/cabell-health-department-awarded-k-private-grant-for-harm-reduction/article_b6e208fd-c3a4-54d5-9d0e-eead14c80dd7.html",
+      "date": "2019-10-03T19:46:38.055Z",
+      "id": 20
     },
     {
-      "title": "Weekly Wanted | Huntington parole warrants",
-      "synopsis": "Folks on the run",
-      "url": "https://www.wsaz.com/content/news/Weekly-Wanted-Huntington-parole-warrants-521323861.html",
-      "id": 12
+      "userId": 3,
+      "id": 21,
+      "title": "Defense attorney taken off Huntington murder case IT WORKS O BABY",
+      "synopsis": "HUNTINGTON — An attorney has withdrawn from a 2017 murder case in Cabell County ahead of trial.",
+      "url": "https://www.herald-dispatch.com/news/defense-attorney-taken-off-huntington-murder-case/article_e4986fef-14ee-5deb-9d94-597c405102f1.html",
+      "date": "2019-10-03T19:52:24.621Z"
     },
     {
-      "title": "When to prune your winter mums with John Marra By Josie Fletcher | Posted: Fri 1:43 PM, Sep 13, 2019          HUNTINGTON, W.Va. (WSAZ) -- Former WSAZ Home and Garden Expert John Marra joined Katie and Sarah in Studio 3.   John Marra makes his debut on Studio 3. John says May 15th, June 15th, and July 15th are when you should prune your winter mums.  He also wants everyone to know about beginning beekeepers school at the Cabell County Career Technology Center. Classes are every Tuesday in October. For information on classes call: (304) 528-5108.   Get the latest updates from wsaz.com delivered to your browser  SUBSCRIBE TO PUSH NOTIFICATIONS Weekly Wanted | Huntington parole warrants Marco and Rufus battle for a Studio 3 mug",
-      "synopsis": "Prune your mums",
-      "url": "https://www.wsaz.com/content/news/When-to-prune-your-winter-mums-with-John-Marra-560249901.html",
-      "id": 13
+      "title": "Marshall University signs agreement with South Korean university",
+      "synopsis": "HUNTINGTON — Marshall University and Handong Global University in South Korea have entered into a memorandum of understanding (MOU), pledging to cooperate on programs of mutual consent and benefit.",
+      "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
+      "userId": 4,
+      "date": "2019-10-04T17:54:39.659Z",
+      "id": 22
+    },
+    {
+      "id": 24,
+      "title": "blarg",
+      "synopsis": "HUNTINGTON — Marshall University and Handong Global University in South Korea have entered into a memorandum of understanding (MOU), pledging to cooperate on programs of mutual consent and benefit.",
+      "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
+      "date": "2019-10-08T15:28:02.308Z"
+    },
+    {
+      "id": 25,
+      "title": "blarg",
+      "synopsis": "HUNTINGTON — Marshall University and Handong Global University in South Korea have entered into a memorandum of understanding (MOU), pledging to cooperate on programs of mutual consent and benefit.",
+      "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
+      "date": "2019-10-08T15:24:30.815Z"
+    },
+    {
+      "id": 26,
+      "title": "aaaaa",
+      "synopsis": "HUNTINGTON — Marshall University and Handong Global University in South Korea have entered into a memorandum of understanding (MOU), pledging to cooperate on programs of mutual consent and benefit.",
+      "url": "https://www.herald-dispatch.com/news/marshall-university-signs-agreement-with-south-korean-university/article_d9c87a21-21b0-5104-aa7c-ee81efa9b238.html",
+      "userId": 19,
+      "date": "2019-10-08T15:31:24.952Z"
     }
   ],
   "events": [
@@ -164,7 +210,7 @@
       "name": "Don't give LEVI your car keys!!!",
       "date": "2019-09-18",
       "location": "nope",
-      "userId": "7",
+      "userId": 7,
       "id": 3
     }
   ]
