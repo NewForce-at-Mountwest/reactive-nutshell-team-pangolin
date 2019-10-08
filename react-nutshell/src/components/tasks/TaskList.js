@@ -91,7 +91,7 @@ class TaskList extends Component {
   render() {
     return (
       <>
-      <body id="task-body">
+      <div id="task-body">
         <h1>Tasks</h1>
         <form>
           {/* inputs for new task and date and ADD btn with a click evt to build method */}
@@ -159,7 +159,7 @@ class TaskList extends Component {
               {/* displaying tasks and checkbox  */}
               <div id="tasks-display">
                 <input id="checkbox" type="checkbox" onClick={()=>this.handleCheckboxChange(singleTask.id)}></input>
-                <p class="listItem"
+                <p className="listItem"
                   id="task"
                   // on click of the <p> tag, we will have option to set that clicked task as the taskToEdit empty object in state
                   onClick={() => this.setState({
@@ -169,13 +169,13 @@ class TaskList extends Component {
                 >
                   {singleTask.task}
                 </p>
-                <p class="listItem" id="date">{singleTask.date}</p>
+                <p className="listItem" id="date">{singleTask.date}</p>
               </div>
               </>
             );
           })}
         </div>
-        </body>
+        </div>
       </>
     );
   }

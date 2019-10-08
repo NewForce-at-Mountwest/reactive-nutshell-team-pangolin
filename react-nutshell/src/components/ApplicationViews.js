@@ -1,10 +1,9 @@
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import TaskList from "./tasks/TaskList";
 import Register from "./login/Register";
 import Login from "./login/Login";
-import NavBar from "./nav/NavBar";
 
 class ApplicationViews extends Component {
   isAuthenticated = () => localStorage.getItem("userId") !== null;

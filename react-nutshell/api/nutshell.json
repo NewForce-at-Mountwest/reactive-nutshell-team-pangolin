@@ -78,7 +78,7 @@
       "userId": 1,
       "task": "Give john a tip.",
       "date": "2019-09-18",
-      "archived": false
+      "archived": true
     },
     {
       "id": 2,
@@ -121,6 +121,27 @@
       "date": "2020-10-09",
       "archived": true,
       "userId": "1"
+    },
+    {
+      "id": 8,
+      "task": "fix the rotors on the car",
+      "date": "2019-10-09",
+      "archived": false,
+      "userId": "1"
+    },
+    {
+      "id": 9,
+      "task": "walk our cat",
+      "date": "2019-10-09",
+      "archived": false,
+      "userId": "1"
+    },
+    {
+      "task": "pet the bat",
+      "date": "2019-12-08",
+      "archived": false,
+      "userId": "1",
+      "id": 10
     }
   ],
   "news": [
