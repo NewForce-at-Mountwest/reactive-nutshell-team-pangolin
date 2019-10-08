@@ -49,39 +49,43 @@
       "id": 17
     },
     {
-      "name": "Slim",
-      "email": "slim@mail",
-      "password": "123",
+      "name": "darylisclutch",
+      "email": "lmao@lmao.lmao",
+      "password": "password",
       "id": 18
-    },
-    {
-      "name": "Alex",
-      "email": "email@email.com",
-      "password": "blah",
-      "id": 19
     }
   ],
   "friends": [],
-  "messages": [
+  "chat": [
     {
-      "userId": 1,
+      "userId": 2,
       "message": "LEVI rules!!!",
       "id": 1
     },
     {
-      "userId": 7,
-      "message": "It's Me!!",
-      "id": 3
-    },
-    {
-      "userId": 1,
       "message": "Where's Scooby Doo at today??",
-      "id": 4
+      "id": 4,
+      "userId": 7
     },
     {
       "userId": 4,
       "message": "It's me Ryan122!",
       "id": 6
+    },
+    {
+      "message": "hey",
+      "id": 7,
+      "userId": 5
+    },
+    {
+      "message": "hi",
+      "userId": 1,
+      "id": 8
+    },
+    {
+      "message": "hello",
+      "userId": "18",
+      "id": 9
     }
   ],
   "tasks": [
@@ -128,32 +132,11 @@
       "userId": 2
     },
     {
-      "id": 7,
-      "task": "fix the rotors on the car",
-      "date": "2020-10-09",
-      "archived": true,
-      "userId": "1"
-    },
-    {
-      "id": 8,
-      "task": "fix the rotors on the car",
-      "date": "2019-10-09",
+      "task": "log out of this account",
+      "date": "2019-10-08",
       "archived": false,
-      "userId": "1"
-    },
-    {
-      "id": 9,
-      "task": "walk our cat",
-      "date": "2019-10-09",
-      "archived": false,
-      "userId": "1"
-    },
-    {
-      "task": "pet the bat",
-      "date": "2019-12-08",
-      "archived": false,
-      "userId": "1",
-      "id": 10
+      "userId": "18",
+      "id": 7
     }
   ],
   "news": [

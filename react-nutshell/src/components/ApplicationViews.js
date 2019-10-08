@@ -1,52 +1,69 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Home from "./home/Home";
+import Home from "./home/Home"
+import ChatList from "./chat/ChatList"
+import Login from "./login/Login"
+import Register from "./login/Register"
+import EventsList from "./events/EventsList"
 import TaskList from "./tasks/TaskList";
-import Register from "./login/Register";
-import Login from "./login/Login";
-import EventsList from "./events/EventsList";
+import NavBar from "./nav/NavBar";
 import EventsForm from "./events/EventsForm";
 import NewsList from "./news/NewsList";
 import NewsCreate from "./news/NewsCreate";
 import NewsEdit from "./news/NewsEdit";
 
+
 class ApplicationViews extends Component {
-  isAuthenticated = () => localStorage.getItem("userId") !== null;
+	isAuthenticated = () => localStorage.getItem("userId") !== null;
 
-  render() {
-    return (
-      <React.Fragment>
-        <Route
-          path="/home"
-          render={props => {
-            return this.isAuthenticated() ? (
-              <Home {...props} />
-            ) : (
-                <Redirect to="/login" />
-              );
-          }}
-        />
+	render() {
+		return (
+			<React.Fragment>
+				<Route
+					path="/home"
+					render={props => {
+						return this.isAuthenticated() ? (
+							<Home {...props} />
+						) : (
+								<Redirect to="/login" />
+							);
+					}}
+				/>
 
-        <Route
-          path="/login"
-          render={props => {
-            return <Login {...props} />;
-          }}
-        />
+				{/* chat home */}
 
-        <Route
-          path="/logout"
-          render={props => {
-            return <Login {...props} />;
-          }}
-        />
+				<Route
+					path="/chat"
+					render={props => {
+						if (this.isAuthenticated()) {
+							return <ChatList  {...props} />
+						} else {
+							return <Redirect to="/login" />
+						}
+					}}
+				/>
 
-        <Route
-          path="/register"
-          render={props => {
-            return <Register {...props} />;
-          }}
-        />
+
+				<Route
+					path="/login"
+					render={props => {
+						return <Login {...props} />;
+					}}
+				/>
+
+				<Route
+					path="/logout"
+					render={props => {
+						return <Login {...props} />;
+					}}
+				/>
+
+				<Route
+					path="/register"
+					render={props => {
+						return <Register {...props} />;
+					}}
+				/>
 
         <Route
           path="/tasks"

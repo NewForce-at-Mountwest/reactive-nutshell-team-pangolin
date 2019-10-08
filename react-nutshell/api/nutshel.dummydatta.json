@@ -1,0 +1,19 @@
+{
+    "chat": [
+        {
+            "id": 1,
+            "message": "message1",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "message": "message2",
+            "userId": 1
+        },
+        {
+            "id": 3,
+            "message": "message3",
+            "userId": 2
+        }
+    ]
+}
