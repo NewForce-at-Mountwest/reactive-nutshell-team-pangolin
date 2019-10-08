@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:3000"
+const remoteURL = "http://localhost:5002"
 
 export default {
     getOne(id) {
@@ -31,8 +31,5 @@ export default {
             body: JSON.stringify(editedEvent)
         }).then(data => data.json());
     },
-    // getWithLocations(id) {
-    //     return fetch(`${remoteURL}/events/${id}?_embed=employees`)
-    //             .then(result => result.json())
-    // }
+    
 }
