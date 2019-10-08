@@ -9,6 +9,7 @@ class NewsEdit extends Component {
 		title: "",
 		synopsis: "",
 		url: "",
+		userId: "",
 		loadingStatus: false
 	};
 
@@ -24,6 +25,7 @@ class NewsEdit extends Component {
 				title: newsArticle.title,
 				synopsis: newsArticle.synopsis,
 				url: newsArticle.url,
+				userId: parseInt(localStorage.getItem("userId")),
 				loadingStatus: false
 			});
 		});
@@ -45,6 +47,7 @@ class NewsEdit extends Component {
 				title: this.state.title,
 				synopsis: this.state.synopsis,
 				url: this.state.url,
+				userId: parseInt(localStorage.getItem("userId")),
 				date: currentTime
 			};
 
