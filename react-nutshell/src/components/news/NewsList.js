@@ -17,6 +17,7 @@ class NewsList extends Component {
 	};
 
 	componentDidMount() {
+		console.log(userId);
 		NewsManager.getAll(userId).then(newsArticles => {
 			newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 			this.setState({

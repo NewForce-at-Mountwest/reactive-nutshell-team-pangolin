@@ -1,10 +1,9 @@
-import { Route, withRouter, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Home from "./home/Home";
 import TaskList from "./tasks/TaskList";
 import Register from "./login/Register";
 import Login from "./login/Login";
-import NavBar from "./nav/NavBar";
 import NewsList from "./news/NewsList";
 import NewsCreate from "./news/NewsCreate";
 import NewsEdit from "./news/NewsEdit";
