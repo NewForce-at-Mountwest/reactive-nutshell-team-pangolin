@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+// import "./NavBar.css";
 
 class NavBar extends Component {
 	// isLoggedIn = () => localStorage.getItem("userId") !== null

@@ -5,7 +5,7 @@ import NewsManager from "../../modules/NewsManager";
 import Button from "react-bootstrap/Button";
 
 // localStorage.setItem("userId", 4);
-const userId = parseInt(localStorage.getItem("userId"));
+// const userId = parseInt(localStorage.getItem("userId"));
 // console.log(userId);
 
 class NewsList extends Component {
@@ -17,6 +17,7 @@ class NewsList extends Component {
 	};
 
 	componentDidMount() {
+		const userId = parseInt(localStorage.getItem("userId"));
 		console.log(userId);
 		NewsManager.getAll(userId).then(newsArticles => {
 			newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -27,6 +28,7 @@ class NewsList extends Component {
 	}
 
 	deleteNewsArticle = id => {
+		const userId = parseInt(localStorage.getItem("userId"));
 		NewsManager.delete(id).then(() => {
 			NewsManager.getAll(userId).then(newsArticles => {
 				newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
